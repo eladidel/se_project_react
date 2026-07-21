@@ -18,9 +18,11 @@ function handleServerData(data) {
   result.temp = data.main.temp;
   result.condition = data.weather[0].main.toLowerCase();
   result.weather = getWeatherCondition(result.temp);
-  result.isDay = isDay();
+  result.isDay = isDay(data);
   return result;
 }
+
+function isDay({}) {}
 
 function getWeatherCondition(temp) {
   if (temp >= 86) {
