@@ -97,4 +97,72 @@ const defaultClothingItems = [
   },
 ];
 
-export { defaultClothingItems };
+const APIkey = "2fe55a64e70ca210a2bc823e42280ec2";
+
+const coordinates = { latitude: 26.1275862, longitude: -80.2331036 };
+
+const weatherConditionOptions = [
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+  },
+
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+  },
+];
+
+export { defaultClothingItems, APIkey, coordinates, weatherConditionOptions };

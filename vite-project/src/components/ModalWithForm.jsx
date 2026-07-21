@@ -1,4 +1,3 @@
-import { Children } from "react";
 import "../blocks/ModalWithForm.css";
 import buttonX from "../images/close-button.svg";
 

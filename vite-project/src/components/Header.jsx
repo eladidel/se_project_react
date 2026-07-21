@@ -2,7 +2,7 @@ import "../blocks/Header.css";
 import headerLogo from "../images/header-logo.svg";
 import userAvatar from "../images/avatar.svg";
 
-function Header({ handleAddButton }) {
+function Header({ handleAddButton, cityName }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -12,7 +12,9 @@ function Header({ handleAddButton }) {
       <header className="header">
         <div className="header__wrap">
           <img src={headerLogo} alt="Header Logo" className="header__logo" />
-          <p className="header__location">{currentDate}, city</p>
+          <p className="header__location">
+            {currentDate}, {cityName}
+          </p>
         </div>
         <div className="header__wrap">
           <button
