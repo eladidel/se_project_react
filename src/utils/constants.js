@@ -105,63 +105,76 @@ const weatherConditionOptions = [
   {
     day: true,
     condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    url: new URL("../images/weathercards/day/clear.svg", import.meta.url).href,
   },
   {
     day: true,
-    condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    condition: "clouds",
+    url: new URL("../images/weathercards/day/clouds.svg", import.meta.url).href,
   },
   {
     day: true,
-    condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    condition: "fog",
+    url: new URL("../images/weathercards/day/fog.svg", import.meta.url).href,
   },
   {
     day: true,
-    condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    condition: "rain",
+    url: new URL("../images/weathercards/day/rain.svg", import.meta.url).href,
   },
   {
     day: true,
-    condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    condition: "snow",
+    url: new URL("../images/weathercards/day/snow.svg", import.meta.url).href,
   },
   {
     day: true,
-    condition: "clear",
-    url: new URL("../image/weathercards/day/clear.svg", import.meta.url).href,
+    condition: "thunderstorm",
+    url: new URL("../images/weathercards/day/storm.svg", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "drizzle",
+    url: new URL("../images/weathercards/day/rain.svg", import.meta.url).href,
   },
 
   {
     day: false,
     condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    url: new URL("../images/weathercards/night/clear.svg", import.meta.url)
+      .href,
   },
   {
     day: false,
-    condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    condition: "fog",
+    url: new URL("../images/weathercards/night/fog.svg", import.meta.url).href,
   },
   {
     day: false,
-    condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    condition: "rain",
+    url: new URL("../images/weathercards/night/rain.svg", import.meta.url).href,
   },
   {
     day: false,
-    condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    condition: "snow",
+    url: new URL("../images/weathercards/night/snow.svg", import.meta.url).href,
   },
   {
     day: false,
-    condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    condition: "thunderstorm",
+    url: new URL("../images/weathercards/night/storm.svg", import.meta.url)
+      .href,
   },
   {
     day: false,
-    condition: "clear",
-    url: new URL("../image/weathercards/night/clear.svg", import.meta.url).href,
+    condition: "drizzle",
+    url: new URL("../images/weathercards/night/rain.svg", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clouds",
+    url: new URL("../images/weathercards/night/clouds.svg", import.meta.url)
+      .href,
   },
 ];
 

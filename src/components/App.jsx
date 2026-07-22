@@ -18,7 +18,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [weatherData, setWeatherData] = useState({ type: "", temp: 0 });
+  const [weatherData, setWeatherData] = useState({});
 
   function handleSelectedCard(card) {
     setActiveModal("preview");

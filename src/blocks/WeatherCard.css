@@ -1,4 +1,4 @@
-.weater-card {
+.weather-card {
   display: flex;
   position: relative;
   height: 80px;
@@ -7,15 +7,15 @@
 }
 .weather-card__temperature {
   color: #ffffff;
-  font-family: Cabinet Grotesk;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 40px;
   margin: 0;
   position: absolute;
   z-index: 1;
   top: 20px;
   left: 16px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
 }
 
 .weather-card__image {

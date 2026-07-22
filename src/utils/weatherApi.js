@@ -17,14 +17,17 @@ function handleServerData(data) {
   result.name = data.name;
   result.temp = data.main.temp;
   result.condition = data.weather[0].main.toLowerCase();
-  result.weather = getWeatherCondition(result.temp);
-  result.isDay = isDay(data);
+  result.weather = getWeatherFeeling(result.temp);
+  result.isDay = isDay(data.sys, Date.now());
+
   return result;
 }
 
-function isDay({}) {}
+function isDay({ sunrise, sunset }, nowTime) {
+  return nowTime >= sunrise && nowTime < sunset;
+}
 
-function getWeatherCondition(temp) {
+function getWeatherFeeling(temp) {
   if (temp >= 86) {
     return "hot";
   } else if (temp >= 66 && temp < 86) {

@@ -5,15 +5,17 @@ import weatherImage from "../images/weathercards/day/clear.svg";
 
 function WeatherCard({ weatherData }) {
   const currentWeatherCondition = weatherConditionOptions.filter((option) => {
-    return option.day == true;
+    return (
+      option.day === weatherData.isDay &&
+      option.condition === weatherData.condition
+    );
   });
-
   return (
     <>
-      <div className="weater-card">
+      <div className="weather-card">
         <p className="weather-card__temperature">{weatherData.temp}°F</p>
         <img
-          src={weatherImage}
+          src={currentWeatherCondition[0]?.url || weatherImage}
           alt="Weather card"
           className="weather-card__image"
         />
