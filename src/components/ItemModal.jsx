@@ -1,12 +1,10 @@
 import "../blocks/ItemModal.css";
-import buttonX from "../images/close-button.svg";
+import closeIcon from "../images/close-button.svg";
 
-function ItemModal({ activeModal, card, handleCloseButton }) {
+function ItemModal({ activeModal, card, handleCloseButton, isOpen }) {
   return (
     <>
-      <div
-        className={`modal ${activeModal === "preview" ? "modal__open" : ""}`}
-      >
+      <div className={`modal ${isOpen ? "modal__open" : ""}`}>
         <div className="modal__content modal__content__type_image">
           <button
             type="button"
@@ -14,7 +12,7 @@ function ItemModal({ activeModal, card, handleCloseButton }) {
             onClick={handleCloseButton}
           >
             <img
-              src={buttonX}
+              src={closeIcon}
               alt="Close Button"
               className="modal__close_image"
             />

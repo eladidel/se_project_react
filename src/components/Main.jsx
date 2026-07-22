@@ -2,7 +2,7 @@ import "../blocks/Main.css";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
 
-function Main({ weatherData, clothingItems, selectedCard }) {
+function Main({ weatherData, clothingItems, onSelectedCard }) {
   return (
     <>
       <main className="main">
@@ -20,7 +20,7 @@ function Main({ weatherData, clothingItems, selectedCard }) {
                 return (
                   <ItemCard
                     card={card}
-                    onCardClick={selectedCard}
+                    onCardClick={onSelectedCard}
                     key={card._id}
                   />
                 );

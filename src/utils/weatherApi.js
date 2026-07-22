@@ -24,7 +24,7 @@ function handleServerData(data) {
 }
 
 function isDay({ sunrise, sunset }, nowTime) {
-  return nowTime >= sunrise && nowTime < sunset;
+  return nowTime >= sunrise * 1000 && nowTime < sunset * 1000;
 }
 
 function getWeatherFeeling(temp) {
