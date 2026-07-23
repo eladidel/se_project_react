@@ -11,16 +11,14 @@ function WeatherCard({ weatherData }) {
     );
   });
   return (
-    <>
-      <div className="weather-card">
-        <p className="weather-card__temperature">{weatherData.temp}°F</p>
-        <img
-          src={currentWeatherCondition[0]?.url || weatherImage}
-          alt="Weather card"
-          className="weather-card__image"
-        />
-      </div>
-    </>
+    <div className="weather-card">
+      <p className="weather-card__temperature">{weatherData.temp}°F</p>
+      <img
+        src={currentWeatherCondition[0]?.url || weatherImage}
+        alt="Weather card"
+        className="weather-card__image"
+      />
+    </div>
   );
 }
 
