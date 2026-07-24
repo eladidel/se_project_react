@@ -1,5 +1,5 @@
-import "../blocks/ModalWithForm.css";
-import buttonX from "../images/close-button.svg";
+import "./ModalWithForm.css";
+import buttonX from "../../images/close-button.svg";
 
 function ModalWithForm({
   children,

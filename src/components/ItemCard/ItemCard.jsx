@@ -1,4 +1,4 @@
-import "../blocks/ItemCard.css";
+import "./ItemCard.css";
 
 function ItemCard({ onCardClick, card }) {
   function handleCardClick() {

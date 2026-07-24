@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 28px;
+}
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  padding: 0 24px 0 0;
+}
+
+.header__location {
+  margin: 0;
+}
+
+.header__button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 0 20px 0 0;
+  cursor: pointer;
+}
+
+.header__user-name {
+  padding: 0 88px 0 0;
+  margin: 0;
+}

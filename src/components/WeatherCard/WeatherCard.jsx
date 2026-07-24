@@ -1,7 +1,7 @@
-import "../blocks/WeatherCard.css";
-import { weatherConditionOptions } from "../utils/constants.js";
+import "./WeatherCard.css";
+import { weatherConditionOptions } from "../../utils/constants.js";
 
-import weatherImage from "../images/weathercards/day/clear.svg";
+import weatherImage from "../../images/weathercards/day/clear.svg";
 
 function WeatherCard({ weatherData }) {
   const currentWeatherCondition = weatherConditionOptions.filter((option) => {
@@ -14,7 +14,7 @@ function WeatherCard({ weatherData }) {
     <div className="weather-card">
       <p className="weather-card__temperature">{weatherData.temp}°F</p>
       <img
-        src={currentWeatherCondition[0]?.url || weatherImage}
+        src={currentWeatherCondition[0]?.url}
         alt="Weather card"
         className="weather-card__image"
       />

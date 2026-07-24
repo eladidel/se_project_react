@@ -1,6 +1,6 @@
-import "../blocks/Main.css";
-import WeatherCard from "./WeatherCard";
-import ItemCard from "./ItemCard";
+import "./Main.css";
+import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard";
 
 function Main({ weatherData, clothingItems, onSelectedCard }) {
   return (

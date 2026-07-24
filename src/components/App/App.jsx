@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-import "../blocks/App.css";
+import "./App.css";
 
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm.jsx";
-import ItemModal from "./ItemModal.jsx";
-import { getWeather, handleServerData } from "../utils/weatherApi.js";
+import Header from "../Header/Header.jsx";
+import Main from "../Main/Main.jsx";
+import Footer from "../Footer/Footer.jsx";
+import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
+import ItemModal from "../ItemModal/ItemModal.jsx";
+import { getWeather, handleServerData } from "../../utils/weatherApi.js";
 import {
   defaultClothingItems,
   apiKey,
   coordinates,
-} from "../utils/constants.js";
+} from "../../utils/constants.js";
 
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);

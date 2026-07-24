@@ -1,6 +1,6 @@
-import "../blocks/Header.css";
-import headerLogo from "../images/header-logo.svg";
-import userAvatar from "../images/avatar.svg";
+import "./Header.css";
+import headerLogo from "../../images/header-logo.svg";
+import userAvatar from "../../images/avatar.svg";
 
 function Header({ handleAddButton, cityName }) {
   const currentDate = new Date().toLocaleString("default", {
