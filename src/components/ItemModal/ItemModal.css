@@ -24,3 +24,9 @@
 .modal__image {
   width: 100%;
 }
+
+@media screen and (max-width: 430px) {
+  .modal__content__type_image {
+    max-width: 343px;
+  }
+}

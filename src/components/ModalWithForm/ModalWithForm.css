@@ -106,3 +106,15 @@
 .modal__submit-button:hover {
   background-color: #00000099;
 }
+
+@media screen and (max-width: 430px) {
+  .modal {
+    max-width: 430px;
+    padding: 0;
+  }
+  .modal__content {
+    max-width: 100%;
+    padding: 32px 16px;
+    height: 455px;
+  }
+}

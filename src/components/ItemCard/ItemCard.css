@@ -28,3 +28,9 @@
   border: 1px solid #0000004d;
   cursor: pointer;
 }
+
+@media screen and (max-width: 430px) {
+  .card {
+    width: 164px;
+  }
+}

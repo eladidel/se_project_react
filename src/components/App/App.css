@@ -12,3 +12,15 @@
   max-width: 1360px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 430px) {
+  .page {
+    padding: 18px 16px 20px;
+  }
+  .page__content {
+    max-width: 375px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+}

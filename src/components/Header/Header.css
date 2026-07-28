@@ -1,11 +1,11 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 40px;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  margin: 0 0 28px;
+  margin: 0 0 16px;
+  position: relative;
 }
 
 .header__wrap {
@@ -32,7 +32,47 @@
   cursor: pointer;
 }
 
+.header__user {
+  display: flex;
+  align-items: center;
+}
+
 .header__user-name {
-  padding: 0 88px 0 0;
+  padding: 0 12px 0 0;
   margin: 0;
+}
+
+.header__mobile-button {
+  visibility: hidden;
+  width: 44px;
+  height: 44px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.header__mobile-menu {
+  width: 44px;
+  height: 44px;
+}
+
+@media screen and (max-width: 430px) {
+  .header__user {
+    visibility: hidden;
+  }
+
+  .header__wrap {
+    display: block;
+  }
+
+  .header__location {
+    margin: 0;
+    margin-top: 34px;
+  }
+
+  .header__mobile-button {
+    visibility: visible;
+  }
 }
