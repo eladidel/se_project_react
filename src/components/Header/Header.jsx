@@ -3,6 +3,8 @@ import headerLogo from "../../images/header-logo.svg";
 import userAvatar from "../../images/avatar.svg";
 import mobileButton from "../../images/header-mobile-button.svg";
 import { useState } from "react";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { Link } from "react-router-dom";
 
 function Header({ handleAddButton, cityName }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -17,12 +19,15 @@ function Header({ handleAddButton, cityName }) {
   return (
     <header className="header">
       <div className="header__wrap">
-        <img src={headerLogo} alt="Header Logo" className="header__logo" />
+        <Link to="/">
+          <img src={headerLogo} alt="Header Logo" className="header__logo" />
+        </Link>
         <p className="header__location">
           {currentDate}, {cityName}
         </p>
       </div>
       <div className="header__user">
+        <ToggleSwitch />
         <div className="header__wrap">
           <button
             type="button"
@@ -32,11 +37,13 @@ function Header({ handleAddButton, cityName }) {
             + Add Cloth
           </button>
           <p className="header__user-name">Terrence Tegegne</p>
-          <img
-            src={userAvatar}
-            alt="User Avatar"
-            className="header__user-avatar"
-          />
+          <Link to="/profile">
+            <img
+              src={userAvatar}
+              alt="User Avatar"
+              className="header__user-avatar"
+            />
+          </Link>
         </div>
         <button className="header__mobile-button">
           <img

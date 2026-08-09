@@ -1,0 +1,15 @@
+.user {
+  display: flex;
+  margin-right: 116px;
+}
+
+.user__avatar {
+  width: 56px;
+  height: 56px;
+}
+
+.user__name {
+  margin: 16px 0 15px 16px;
+  min-width: 155px;
+  max-width: 165px;
+}

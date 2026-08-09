@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import closeIcon from "../../images/close-button.svg";
 
-function ItemModal({ activeModal, card, handleCloseButton, isOpen }) {
+function ItemModal({ card, handleCloseButton, isOpen }) {
   return (
     <div className={`modal ${isOpen ? "modal__open" : ""}`}>
       <div className="modal__content modal__content__type_image">

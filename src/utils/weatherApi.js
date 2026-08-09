@@ -13,11 +13,13 @@ function getWeather({ latitude, longitude }, APIkey) {
 
 function handleServerData(data) {
   const result = {};
-
   result.name = data.name;
-  result.temp = data.main.temp;
+  result.temp = {
+    F: Math.round(data.main.temp),
+    C: Math.round(((data.main.temp - 32) * 5) / 9),
+  };
   result.condition = data.weather[0].main.toLowerCase();
-  result.weather = getWeatherFeeling(result.temp);
+  result.weather = getWeatherFeeling(result.temp.F);
   result.isDay = isDay(data.sys, Date.now());
 
   return result;

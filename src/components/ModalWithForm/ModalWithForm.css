@@ -76,6 +76,8 @@
 .modal__label_type_radio {
   display: block;
   margin: 0 0 8px;
+  color: #00000080;
+  cursor: pointer;
 }
 
 .modal__label_type_radio:last-child {
@@ -85,6 +87,12 @@
 
 .modal__input-radio {
   margin: 0 8px 0 0;
+  cursor: pointer;
+  accent-color: #000000;
+}
+
+.modal__label_type_radio:has(.modal__input-radio:checked) {
+  color: #000000;
 }
 
 .modal__submit-button {
