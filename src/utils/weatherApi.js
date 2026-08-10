@@ -1,8 +1,5 @@
 function handleServerResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error: ${res.status}`);
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 function getWeather({ latitude, longitude }, APIkey) {
@@ -39,4 +36,4 @@ function getWeatherFeeling(temp) {
   }
 }
 
-export { getWeather, handleServerData };
+export { getWeather, handleServerData, handleServerResponse };

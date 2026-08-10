@@ -8,11 +8,13 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
     link: "",
   });
 
+  function handleReset() {
+    setValues({ name: "", weather: "", link: "" });
+  }
+
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values);
-    setValues({ name: "", weather: "", link: "" });
-    onCloseModal();
+    onAddItem(values, handleReset);
   }
 
   return (

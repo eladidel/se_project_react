@@ -11,6 +11,7 @@
 
 .modal__footer {
   padding: 20px 32px 32px;
+  position: relative;
 }
 
 .modal__caption {
@@ -23,6 +24,18 @@
 
 .modal__image {
   width: 100%;
+}
+
+.modal__delete-button {
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ff4d00;
+  position: absolute;
+  right: 32px;
+  top: 20px;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 430px) {

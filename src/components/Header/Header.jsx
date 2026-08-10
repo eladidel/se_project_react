@@ -36,14 +36,14 @@ function Header({ handleAddButton, cityName }) {
           >
             + Add Cloth
           </button>
-          <p className="header__user-name">Terrence Tegegne</p>
-          <Link to="/profile">
-            <img
-              src={userAvatar}
-              alt="User Avatar"
-              className="header__user-avatar"
-            />
+          <Link className="header__user-name_type_link" to="/profile">
+            <p className="header__user-name">Terrence Tegegne</p>
           </Link>
+          <img
+            src={userAvatar}
+            alt="User Avatar"
+            className="header__user-avatar"
+          />
         </div>
         <button className="header__mobile-button">
           <img

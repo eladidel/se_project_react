@@ -9,20 +9,17 @@ import Footer from "../Footer/Footer";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import ItemModal from "../ItemModal/ItemModal";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
 import { getWeather, handleServerData } from "../../utils/weatherApi.js";
-import {
-  defaultClothingItems,
-  apiKey,
-  coordinates,
-} from "../../utils/constants.js";
+import { apiKey, coordinates } from "../../utils/constants.js";
+import { getItems, addItem, deleteItem } from "../../utils/api.js";
 
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
 import ClothingItemsContext from "../../contexts/ClothingItemsContext.js";
-import ItemCard from "../ItemCard/ItemCard.jsx";
 
 function App() {
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [weatherData, setWeatherData] = useState({
@@ -31,8 +28,46 @@ function App() {
   });
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
+  useEffect(() => {
+    getWeather(coordinates, apiKey)
+      .then((data) => {
+        const filterData = handleServerData(data);
+        setWeatherData(filterData);
+      })
+      .catch(console.error);
+
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  function openConfirmationModal() {
+    setActiveModal("delete");
+  }
+
+  function handleCardDlete() {
+    deleteItem(selectedCard._id)
+      .then(() => {
+        setClothingItems(
+          clothingItems.filter((item) => {
+            return item._id != selectedCard._id;
+          }),
+        );
+        closeModal();
+      })
+      .catch(console.error);
+  }
+
   function handleOnAddItem(inputValues, handleReset) {
-    setClothingItems([...clothingItems, inputValues]);
+    addItem(inputValues)
+      .then((data) => {
+        setClothingItems([...clothingItems, data]);
+        closeModal();
+      })
+      .catch(console.error);
+    // handleReset();
   }
 
   function handleSelectedCard(card) {
@@ -52,18 +87,9 @@ function App() {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   }
 
-  useEffect(() => {
-    getWeather(coordinates, apiKey)
-      .then((data) => {
-        const filterData = handleServerData(data);
-        setWeatherData(filterData);
-      })
-      .catch(console.error);
-  }, []);
-
   return (
     <ClothingItemsContext.Provider
-      value={{ clothingItems, handleSelectedCard }}
+      value={{ clothingItems, handleSelectedCard, handleAddGarmentButton }}
     >
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -99,6 +125,13 @@ function App() {
             card={selectedCard}
             handleCloseButton={closeModal}
             isOpen={activeModal === "preview"}
+            onClick={openConfirmationModal}
+          />
+          <DeleteConfirmationModal
+            card={selectedCard}
+            handleCloseButton={closeModal}
+            isOpen={activeModal === "delete"}
+            onDeleteClick={handleCardDlete}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>

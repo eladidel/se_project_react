@@ -39,8 +39,14 @@
 }
 
 .header__user-name {
-  padding: 0 12px 0 0;
+  padding: 0;
   margin: 0;
+}
+
+.header__user-name_type_link {
+  all: unset;
+  cursor: pointer;
+  margin-right: 12px;
 }
 
 .header__mobile-button {

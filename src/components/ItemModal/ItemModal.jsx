@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import closeIcon from "../../images/close-button.svg";
 
-function ItemModal({ card, handleCloseButton, isOpen }) {
+function ItemModal({ card, handleCloseButton, isOpen, onClick }) {
   return (
     <div className={`modal ${isOpen ? "modal__open" : ""}`}>
       <div className="modal__content modal__content__type_image">
@@ -20,6 +20,13 @@ function ItemModal({ card, handleCloseButton, isOpen }) {
         <div className="modal__footer">
           <p className="modal__caption">{card.name}</p>
           <p className="modal__weather">Weather: {card.weather}</p>
+          <button
+            type="button"
+            className="modal__delete-button"
+            onClick={onClick}
+          >
+            Delete Item
+          </button>
         </div>
       </div>
     </div>

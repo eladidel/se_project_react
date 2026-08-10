@@ -4,14 +4,20 @@ import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
 
 function ClothesSection() {
-  const { clothingItems, handleSelectedCard } =
+  const { clothingItems, handleSelectedCard, handleAddGarmentButton } =
     useContext(ClothingItemsContext);
 
   return (
     <div className="clothes">
       <div className="clothes__header">
         <p className="clothes__header-title">Your items</p>
-        <button className="clothes__header-button">+ Add new</button>
+        <button
+          type="button"
+          className="clothes__header-button"
+          onClick={handleAddGarmentButton}
+        >
+          + Add new
+        </button>
       </div>
       <div className="clothes__cards">
         {clothingItems.map((card) => {
