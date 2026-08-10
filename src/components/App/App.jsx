@@ -63,11 +63,11 @@ function App() {
   function handleOnAddItem(inputValues, handleReset) {
     addItem(inputValues)
       .then((data) => {
-        setClothingItems([...clothingItems, data]);
+        setClothingItems([data, ...clothingItems]);
         closeModal();
+        handleReset();
       })
       .catch(console.error);
-    handleReset();
   }
 
   function handleSelectedCard(card) {

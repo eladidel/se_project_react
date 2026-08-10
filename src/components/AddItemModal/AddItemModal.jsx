@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import useForm from "../../hooks/useForm.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
@@ -7,6 +8,10 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
     weather: "",
     link: "",
   });
+
+  useEffect(() => {
+    handleReset();
+  }, [isOpen]);
 
   function handleReset() {
     setValues({ name: "", weather: "", link: "" });
