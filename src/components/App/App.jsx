@@ -67,7 +67,7 @@ function App() {
         closeModal();
       })
       .catch(console.error);
-    // handleReset();
+    handleReset();
   }
 
   function handleSelectedCard(card) {
