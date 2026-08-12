@@ -1,25 +1,33 @@
 import { useEffect } from "react";
-import useForm from "../../hooks/useForm.js";
+import useFormWithValidation from "../../hooks/useFormWithValidation.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
-  const { values, handleChange, setValues } = useForm({
-    name: "",
-    weather: "",
-    link: "",
-  });
+  const {
+    values,
+    handleChange,
+    setValues,
+    errors,
+    isValid,
+    resetForm,
+    validateForm,
+  } = useFormWithValidation({ name: "", weather: "", link: "" });
 
   useEffect(() => {
     handleReset();
   }, [isOpen]);
 
   function handleReset() {
-    setValues({ name: "", weather: "", link: "" });
+    resetForm({ name: "", weather: "", link: "" }, {}, false);
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values, handleReset);
+    if (!isValid) {
+      validateForm(evt.target);
+      return;
+    }
+    onAddItem(values, resetForm);
   }
 
   return (
@@ -29,32 +37,47 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
       onCloseModal={onCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <label className="modal__label">
         Name
         <input
           type="text"
           name="name"
-          id="cloht-name"
+          id="cloth-name"
           className="modal__input"
           placeholder="Name"
           required
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? "name-error" : undefined}
           value={values.name}
           onChange={handleChange}
         />
+        {errors.name && (
+          <span className="modal__error" id="name-error">
+            {errors.name}
+          </span>
+        )}
       </label>
       <label className="modal__label">
         Image
         <input
           type="url"
           name="link"
-          id="cloth=link"
+          id="cloth-link"
           className="modal__input"
           placeholder="Image URL"
           required
+          aria-invalid={!!errors.link}
+          aria-describedby={errors.link ? "link-error" : undefined}
           value={values.link}
           onChange={handleChange}
         />
+        {errors.link && (
+          <span className="modal__error" id="link-error">
+            {errors.link}
+          </span>
+        )}
       </label>
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>
@@ -65,6 +88,7 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
             name="weather"
             checked={values.weather === "hot"}
             value="hot"
+            required
             onChange={handleChange}
           />
           Hot
@@ -91,6 +115,11 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
           />
           Cold
         </label>
+        {errors.weather && (
+          <span className="modal__error" id="weather-error">
+            {errors.weather}
+          </span>
+        )}
       </fieldset>
     </ModalWithForm>
   );
