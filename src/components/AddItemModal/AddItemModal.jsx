@@ -11,14 +11,14 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
     isValid,
     resetForm,
     validateForm,
-  } = useFormWithValidation({ name: "", weather: "", link: "" });
+  } = useFormWithValidation({ name: "", weather: "", imageUrl: "" });
 
   useEffect(() => {
     handleReset();
   }, [isOpen]);
 
   function handleReset() {
-    resetForm({ name: "", weather: "", link: "" }, {}, false);
+    resetForm({ name: "", weather: "", imageUrl: "" }, {}, false);
   }
 
   function handleSubmit(evt) {
@@ -63,19 +63,19 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
         Image
         <input
           type="url"
-          name="link"
-          id="cloth-link"
+          name="imageUrl"
+          id="cloth-imageUrl"
           className="modal__input"
           placeholder="Image URL"
           required
-          aria-invalid={!!errors.link}
-          aria-describedby={errors.link ? "link-error" : undefined}
-          value={values.link}
+          aria-invalid={!!errors.imageUrl}
+          aria-describedby={errors.imageUrl ? "imageUrl-error" : undefined}
+          value={values.imageUrl}
           onChange={handleChange}
         />
-        {errors.link && (
-          <span className="modal__error" id="link-error">
-            {errors.link}
+        {errors.imageUrl && (
+          <span className="modal__error" id="imageUrl-error">
+            {errors.imageUrl}
           </span>
         )}
       </label>
