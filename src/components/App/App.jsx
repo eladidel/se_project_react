@@ -144,9 +144,21 @@ function App() {
     api
       .signin(inputValues)
       .then((res) => {
-        closeModal();
-        handleReset();
         localStorage.setItem("jwt", res.token);
+        closeModal();
+
+        api
+          .getUser()
+          .then((user) => {
+            setIsLoggedIn(true);
+            setCurrentUser({
+              name: user.name,
+              avatar: user.avatar,
+              _id: user._id,
+            });
+          })
+          .catch(console.error);
+        handleReset();
       })
       .catch(console.error);
   }
