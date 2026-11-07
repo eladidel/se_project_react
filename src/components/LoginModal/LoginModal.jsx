@@ -23,10 +23,10 @@ function LoginModal({ isOpen, onLogIn, onCloseModal, handleRegisterButton }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    // if (!isValid) {
-    //   validateForm(evt.target);
-    //   return;
-    // }
+    if (!isValid) {
+      validateForm(evt.target);
+      return;
+    }
     onLogIn(values, handleReset);
   }
 
