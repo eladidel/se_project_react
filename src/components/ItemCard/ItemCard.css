@@ -1,5 +1,6 @@
 .card {
-  width: 323px;
+  width: 325px;
+  height: 328px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -27,6 +28,24 @@
   border-radius: 12px;
   border: 1px solid #0000004d;
   cursor: pointer;
+}
+
+.card__like-default {
+  background-image: url("../../images/likes/state-default.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 96px;
+  width: 18px;
+  height: 15px;
+}
+
+.card__like-liked {
+  background-image: url("../../images/likes/state-liked.svg");
 }
 
 @media screen and (max-width: 430px) {

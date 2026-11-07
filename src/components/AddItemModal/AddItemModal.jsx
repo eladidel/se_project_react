@@ -27,12 +27,12 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
       validateForm(evt.target);
       return;
     }
-    onAddItem(values, resetForm);
+    onAddItem(values, handleReset);
   }
 
   return (
     <ModalWithForm
-      title="New Garment"
+      title="New "
       buttonText="Add Garment"
       onCloseModal={onCloseModal}
       isOpen={isOpen}

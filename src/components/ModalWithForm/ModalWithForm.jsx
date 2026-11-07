@@ -9,6 +9,8 @@ function ModalWithForm({
   isOpen,
   onSubmit,
   isValid,
+  modalClass = "",
+  onClick,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal__open" : ""}`}>
@@ -29,11 +31,26 @@ function ModalWithForm({
           {children}
           <button
             type="submit"
-            className="modal__submit-button"
+            className={
+              title === "Log In" || title === "Sign Up"
+                ? `modal__submit-button ${modalClass}`
+                : "modal__submit-button"
+            }
             disabled={!isValid}
           >
             {buttonText}
           </button>
+          {title === "Log In" || title === "Sign Up" ? (
+            <button
+              type="button"
+              className="modal__register-button"
+              onClick={onClick}
+            >
+              {title === "Sign Up" ? "Or Log In" : "Or Sign Up"}
+            </button>
+          ) : (
+            ""
+          )}
         </form>
       </div>
     </div>
