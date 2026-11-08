@@ -170,7 +170,13 @@ function App() {
   function handleRegister(inputValues, handleReset) {
     api
       .signup(inputValues)
-      .then(() => {
+      .then((user) => {
+        setIsLoggedIn(true);
+        setCurrentUser({
+          name: user.name,
+          avatar: user.avatar,
+          _id: user._id,
+        });
         closeModal();
         handleReset();
       })

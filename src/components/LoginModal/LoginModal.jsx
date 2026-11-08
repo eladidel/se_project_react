@@ -3,15 +3,8 @@ import useFormWithValidation from "../../hooks/useFormWithValidation.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
 function LoginModal({ isOpen, onLogIn, onCloseModal, handleRegisterButton }) {
-  const {
-    values,
-    handleChange,
-    setValues,
-    errors,
-    isValid,
-    resetForm,
-    validateForm,
-  } = useFormWithValidation({ email: "", password: "" });
+  const { values, handleChange, errors, isValid, resetForm, validateForm } =
+    useFormWithValidation({ email: "", password: "" });
 
   useEffect(() => {
     handleReset();
@@ -46,7 +39,7 @@ function LoginModal({ isOpen, onLogIn, onCloseModal, handleRegisterButton }) {
         <input
           type="email"
           name="email"
-          id="user-email"
+          id="login-email"
           className="modal__input"
           placeholder="Email"
           required
@@ -66,7 +59,7 @@ function LoginModal({ isOpen, onLogIn, onCloseModal, handleRegisterButton }) {
         <input
           type="password"
           name="password"
-          id="user-pasword"
+          id="login-pasword"
           className="modal__input"
           placeholder="Password"
           required

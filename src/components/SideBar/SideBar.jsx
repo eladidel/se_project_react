@@ -9,7 +9,15 @@ function SideBar() {
   return (
     <div className="user">
       <div className="user__wrap">
-        <img src={currentUser.avatar} alt="Avatar" className="user__avatar" />
+        {currentUser.avatar ? (
+          <img
+            src={currentUser.avatar}
+            alt="User Avatar"
+            className="user__avatar"
+          />
+        ) : (
+          <div className="user__avatar-placeholder">{currentUser.name[0]}</div>
+        )}
         <p className="user__name">{currentUser.name}</p>
       </div>
       <button

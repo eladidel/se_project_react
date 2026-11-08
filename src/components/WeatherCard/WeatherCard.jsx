@@ -1,7 +1,6 @@
 import "./WeatherCard.css";
 import { weatherConditionOptions } from "../../utils/constants.js";
 
-import weatherImage from "../../images/weathercards/day/clear.svg";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.js";
 import { useContext } from "react";
 

@@ -13,18 +13,11 @@ function EditProfileModal({
 }) {
   const { currentUser } = useContext(CurrentUserContext);
 
-  const {
-    values,
-    handleChange,
-    setValues,
-    errors,
-    isValid,
-    resetForm,
-    validateForm,
-  } = useFormWithValidation({
-    name: currentUser.name,
-    avatar: currentUser.avatar,
-  });
+  const { values, handleChange, errors, isValid, resetForm, validateForm } =
+    useFormWithValidation({
+      name: currentUser.name,
+      avatar: currentUser.avatar,
+    });
 
   useEffect(() => {
     handleReset();
@@ -62,7 +55,7 @@ function EditProfileModal({
         <input
           type="name"
           name="name"
-          id="user-name"
+          id="edit-name"
           className="modal__input"
           required
           aria-invalid={!!errors.name}
@@ -81,7 +74,7 @@ function EditProfileModal({
         <input
           type="url"
           name="avatar"
-          id="user-avatar"
+          id="edit-avatar"
           className="modal__input"
           required
           aria-invalid={!!errors.avatar}

@@ -8,20 +8,13 @@ function RegisterModal({
   onCloseModal,
   handleLogInButton,
 }) {
-  const {
-    values,
-    handleChange,
-    setValues,
-    errors,
-    isValid,
-    resetForm,
-    validateForm,
-  } = useFormWithValidation({
-    email: "",
-    password: "",
-    name: "",
-    avatar: "",
-  });
+  const { values, handleChange, errors, isValid, resetForm, validateForm } =
+    useFormWithValidation({
+      email: "",
+      password: "",
+      name: "",
+      avatar: "",
+    });
 
   useEffect(() => {
     handleReset();
@@ -37,7 +30,7 @@ function RegisterModal({
       validateForm(evt.target);
       return;
     }
-    onRegister(values, handleSubmit);
+    onRegister(values, handleReset);
   }
 
   return (
@@ -56,7 +49,7 @@ function RegisterModal({
         <input
           type="email"
           name="email"
-          id="user-email"
+          id="register-email"
           className="modal__input"
           placeholder="Email"
           required
@@ -76,7 +69,7 @@ function RegisterModal({
         <input
           type="password"
           name="password"
-          id="user-pasword"
+          id="register-pasword"
           className="modal__input"
           placeholder="Password"
           required
@@ -96,7 +89,7 @@ function RegisterModal({
         <input
           type="name"
           name="name"
-          id="user-name"
+          id="register-name"
           className="modal__input"
           placeholder="Name"
           required
@@ -116,7 +109,7 @@ function RegisterModal({
         <input
           type="url"
           name="avatar"
-          id="user-avatar"
+          id="register-avatar"
           className="modal__input"
           placeholder="Avatar URL"
           required

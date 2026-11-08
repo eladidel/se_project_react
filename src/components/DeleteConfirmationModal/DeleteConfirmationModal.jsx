@@ -1,12 +1,7 @@
 import "./DeleteConfirmationModal.css";
 import closeIcon from "../../images/close-button.svg";
 
-function DeleteConfirmationModal({
-  card,
-  handleCloseButton,
-  isOpen,
-  onDeleteClick,
-}) {
+function DeleteConfirmationModal({ handleCloseButton, isOpen, onDeleteClick }) {
   return (
     <div className={`modal ${isOpen ? "modal__open" : ""}`}>
       <div className="modal__content modal__content__type_delete">

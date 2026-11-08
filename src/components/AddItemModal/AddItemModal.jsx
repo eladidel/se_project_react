@@ -3,15 +3,8 @@ import useFormWithValidation from "../../hooks/useFormWithValidation.js";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
-  const {
-    values,
-    handleChange,
-    setValues,
-    errors,
-    isValid,
-    resetForm,
-    validateForm,
-  } = useFormWithValidation({ name: "", weather: "", imageUrl: "" });
+  const { values, handleChange, errors, isValid, resetForm, validateForm } =
+    useFormWithValidation({ name: "", weather: "", imageUrl: "" });
 
   useEffect(() => {
     handleReset();

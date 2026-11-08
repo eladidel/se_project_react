@@ -59,11 +59,17 @@ function Header({
             <Link className="header__user-name_type_link" to="/profile">
               <p className="header__user-name">{currentUser.name}</p>
             </Link>
-            <img
-              src={currentUser.avatar}
-              alt="User Avatar"
-              className="header__user-avatar"
-            />
+            {currentUser.avatar ? (
+              <img
+                src={currentUser.avatar}
+                alt="User Avatar"
+                className="header__user-avatar"
+              />
+            ) : (
+              <div className="header__avatar-placeholder">
+                {currentUser.name[0]}
+              </div>
+            )}
           </div>
         )}
       </div>
